@@ -6,9 +6,9 @@
           "destino_x": 88,
           "destino_y": 100,
           "velocidad": "59",
-          "red": 25,
-          "green": 25,
-          "blue": 50
+          "red": 255,
+          "green": 45,
+          "blue": 0
      },
      {
           "id": "216545796",
@@ -17,9 +17,9 @@
           "destino_x": 31,
           "destino_y": 200,
           "velocidad": "42",
-          "red": 50,
-          "green": 25,
-          "blue": 50
+          "red": 0,
+          "green": 255,
+          "blue": 15
      },
      {
           "id": "216579613",
@@ -28,8 +28,8 @@
           "destino_x": 234,
           "destino_y": 249,
           "velocidad": "70",
-          "red": 25,
-          "green": 50,
-          "blue": 50
+          "red": 0,
+          "green": 31,
+          "blue": 255
      }
 ]
