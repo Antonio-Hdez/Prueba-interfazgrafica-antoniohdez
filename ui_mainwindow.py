@@ -22,6 +22,14 @@ class Ui_MainWindow(object):
         self.actionAbrir.setObjectName(u"actionAbrir")
         self.actionGuardar = QAction(MainWindow)
         self.actionGuardar.setObjectName(u"actionGuardar")
+        self.actionID = QAction(MainWindow)
+        self.actionID.setObjectName(u"actionID")
+        self.actionId = QAction(MainWindow)
+        self.actionId.setObjectName(u"actionId")
+        self.actionDistancia = QAction(MainWindow)
+        self.actionDistancia.setObjectName(u"actionDistancia")
+        self.actionVelocidad = QAction(MainWindow)
+        self.actionVelocidad.setObjectName(u"actionVelocidad")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayout_3 = QGridLayout(self.centralwidget)
@@ -216,18 +224,24 @@ class Ui_MainWindow(object):
         self.menubar.setGeometry(QRect(0, 0, 786, 21))
         self.menuArchivo = QMenu(self.menubar)
         self.menuArchivo.setObjectName(u"menuArchivo")
+        self.menuID = QMenu(self.menubar)
+        self.menuID.setObjectName(u"menuID")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
         MainWindow.setStatusBar(self.statusbar)
 
         self.menubar.addAction(self.menuArchivo.menuAction())
+        self.menubar.addAction(self.menuID.menuAction())
         self.menuArchivo.addAction(self.actionAbrir)
         self.menuArchivo.addAction(self.actionGuardar)
+        self.menuID.addAction(self.actionId)
+        self.menuID.addAction(self.actionDistancia)
+        self.menuID.addAction(self.actionVelocidad)
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(2)
+        self.tabWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -243,6 +257,10 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(shortcut)
         self.actionGuardar.setShortcut(QCoreApplication.translate("MainWindow", u"Ctrl+S", None))
 #endif // QT_CONFIG(shortcut)
+        self.actionID.setText(QCoreApplication.translate("MainWindow", u"ID", None))
+        self.actionId.setText(QCoreApplication.translate("MainWindow", u"Id", None))
+        self.actionDistancia.setText(QCoreApplication.translate("MainWindow", u"Distancia", None))
+        self.actionVelocidad.setText(QCoreApplication.translate("MainWindow", u"Velocidad", None))
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Datos", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Destino x:", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"Green:", None))
@@ -266,5 +284,6 @@ class Ui_MainWindow(object):
         self.limpiar.setText(QCoreApplication.translate("MainWindow", u"Limpiar", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("MainWindow", u"Dibujar", None))
         self.menuArchivo.setTitle(QCoreApplication.translate("MainWindow", u"Archivo", None))
+        self.menuID.setTitle(QCoreApplication.translate("MainWindow", u"Ordenar por", None))
     # retranslateUi
 

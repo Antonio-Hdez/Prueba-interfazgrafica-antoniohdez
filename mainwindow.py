@@ -20,9 +20,12 @@ class MainWindow(QMainWindow):
         self.ui.agregar_final_pushButton.clicked.connect(self.click_agregar)
         self.ui.agregar_inicio_pushButton.clicked.connect(self.click_agregar_inicio)
         self.ui.mostrar_pushButton.clicked.connect(self.click_mostrar)
-
         self.ui.actionAbrir.triggered.connect(self.action_abrir_archivo)
         self.ui.actionGuardar.triggered.connect(self.action_guardar_archivo)
+
+        self.ui.actionId.triggered.connect(self.action_ordenar_id)
+        self.ui.actionDistancia.triggered.connect(self.action_ordenar_distancia)
+        self.ui.actionVelocidad.triggered.connect(self.action_ordenar_velocidad)
 
         self.ui.mostrar_tabla_pushButton.clicked.connect(self.mostrar_tabla)
         self.ui.buscar_pushButton.clicked.connect(self.buscar_id)
@@ -31,6 +34,16 @@ class MainWindow(QMainWindow):
         self.ui.limpiar.clicked.connect(self.limpiar)
         self.scene = QGraphicsScene()
         self.ui.graphicsView.setScene(self.scene)
+    
+    @Slot()
+    def action_ordenar_id(self):
+        self.particulas.ordenar_id()
+    @Slot()
+    def action_ordenar_distancia(self):
+        self.particulas.ordenar_distancia()
+    @Slot()
+    def action_ordenar_velocidad(self):
+        self.particulas.ordenar_velocidad()
 
     def wheelEvent(self, event):
         if event.delta() > 0:
