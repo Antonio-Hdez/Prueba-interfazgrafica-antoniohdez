@@ -6,6 +6,7 @@ from repositorio_particula.particula import Particula
 from repositorio_particula.algoritmos import distancia_euclidiana
 from PySide2.QtGui import QPen, QColor, QTransform
 from random import randint
+from pprint import pformat, pprint
 
 
 
@@ -23,6 +24,8 @@ class MainWindow(QMainWindow):
         self.ui.actionAbrir.triggered.connect(self.action_abrir_archivo)
         self.ui.actionGuardar.triggered.connect(self.action_guardar_archivo)
 
+        self.ui.ver_grafos_action.triggered.connect(self.grafos)
+
         self.ui.actionId.triggered.connect(self.action_ordenar_id)
         self.ui.actionDistancia.triggered.connect(self.action_ordenar_distancia)
         self.ui.actionVelocidad.triggered.connect(self.action_ordenar_velocidad)
@@ -34,16 +37,28 @@ class MainWindow(QMainWindow):
         self.ui.limpiar.clicked.connect(self.limpiar)
         self.scene = QGraphicsScene()
         self.ui.graphicsView.setScene(self.scene)
+
+    @Slot()
+    def grafos(self):
+        self.ui.salida.clear()
+        self.ui.salida.insertPlainText(self.particulas.ver_grafos())
+        print(self.particulas.ver_grafos())
     
     @Slot()
     def action_ordenar_id(self):
         self.particulas.ordenar_id()
+        self.mostrar_tabla()
+        self.click_mostrar()
     @Slot()
     def action_ordenar_distancia(self):
         self.particulas.ordenar_distancia()
+        self.mostrar_tabla()
+        self.click_mostrar()
     @Slot()
     def action_ordenar_velocidad(self):
         self.particulas.ordenar_velocidad()
+        self.mostrar_tabla()
+        self.click_mostrar()
 
     def wheelEvent(self, event):
         if event.delta() > 0:
@@ -54,7 +69,7 @@ class MainWindow(QMainWindow):
     @Slot()
     def dibujar(self):
         for Particula in self.particulas:
-            print('dibujar')
+            #print('dibujar')
 
             pen = QPen()
             pen.setWidth(2)

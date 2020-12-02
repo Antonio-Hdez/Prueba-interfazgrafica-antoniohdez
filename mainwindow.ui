@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>786</width>
+    <width>775</width>
     <height>557</height>
    </rect>
   </property>
@@ -18,7 +18,7 @@
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -190,29 +190,29 @@
         <string>Tabla</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_4">
-        <item row="0" column="0" colspan="3">
-         <widget class="QTableWidget" name="tabla"/>
+        <item row="2" column="2">
+         <widget class="QPushButton" name="mostrar_tabla_pushButton">
+          <property name="text">
+           <string>Mostrar</string>
+          </property>
+         </widget>
         </item>
-        <item row="1" column="0">
+        <item row="2" column="0">
          <widget class="QLineEdit" name="buscar_lineEdit">
           <property name="placeholderText">
            <string>ID de particula</string>
           </property>
          </widget>
         </item>
-        <item row="1" column="1">
+        <item row="2" column="1">
          <widget class="QPushButton" name="buscar_pushButton">
           <property name="text">
            <string>Buscar</string>
           </property>
          </widget>
         </item>
-        <item row="1" column="2">
-         <widget class="QPushButton" name="mostrar_tabla_pushButton">
-          <property name="text">
-           <string>Mostrar</string>
-          </property>
-         </widget>
+        <item row="0" column="0" colspan="4">
+         <widget class="QTableWidget" name="tabla"/>
         </item>
        </layout>
       </widget>
@@ -249,7 +249,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>786</width>
+     <width>775</width>
      <height>21</height>
     </rect>
    </property>
@@ -268,8 +268,15 @@
     <addaction name="actionDistancia"/>
     <addaction name="actionVelocidad"/>
    </widget>
+   <widget class="QMenu" name="menuVer">
+    <property name="title">
+     <string>Ver</string>
+    </property>
+    <addaction name="ver_grafos_action"/>
+   </widget>
    <addaction name="menuArchivo"/>
    <addaction name="menuID"/>
+   <addaction name="menuVer"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionAbrir">
@@ -306,6 +313,14 @@
   <action name="actionVelocidad">
    <property name="text">
     <string>Velocidad</string>
+   </property>
+  </action>
+  <action name="ver_grafos_action">
+   <property name="text">
+    <string>Ver grafo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
    </property>
   </action>
  </widget>
