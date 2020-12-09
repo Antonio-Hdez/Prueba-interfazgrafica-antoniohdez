@@ -267,6 +267,7 @@
     <addaction name="actionId"/>
     <addaction name="actionDistancia"/>
     <addaction name="actionVelocidad"/>
+    <addaction name="actionRecorrido_en_Profundidad_Amplitud"/>
    </widget>
    <widget class="QMenu" name="menuVer">
     <property name="title">
@@ -321,6 +322,11 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+G</string>
+   </property>
+  </action>
+  <action name="actionRecorrido_en_Profundidad_Amplitud">
+   <property name="text">
+    <string>Recorrido en Profundidad/Amplitud</string>
    </property>
   </action>
  </widget>

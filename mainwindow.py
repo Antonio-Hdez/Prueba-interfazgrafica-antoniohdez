@@ -38,12 +38,42 @@ class MainWindow(QMainWindow):
         self.scene = QGraphicsScene()
         self.ui.graphicsView.setScene(self.scene)
 
+        self.ui.actionRecorrido_en_Profundidad_Amplitud.triggered.connect(self.recorrido)
+
+    @Slot()
+    def recorrido(self):
+        self.particulas.bye_peso()
+        self.ui.salida.clear()
+
+        origenes = (self.ui.origenx_spinBox.value(), self.ui.origeny_spinBox.value())
+        recorrido = self.particulas.mostrar_recorrido(origenes)
+
+        print ("Profundidad")
+
+        self.ui.salida.insertPlainText("Profundidad" + '\n')
+        for i in recorrido:
+            self.ui.salida.insertPlainText(str(i) + '\n')
+            print(i)
+        
+        recorrido_2 = self.particulas.mostrar_recorrido_2(origenes)
+
+        print ("\nAmplitud")
+
+        self.ui.salida.insertPlainText('\n'"Amplitud" + '\n')
+        for i in recorrido_2:
+            self.ui.salida.insertPlainText(str(i) + '\n')
+            print(i)
+        QMessageBox.information(
+                self,
+                "Exito",
+                "Se imprimieron los recorridos" 
+            )
+
     @Slot()
     def grafos(self):
         self.ui.salida.clear()
-        self.ui.salida.insertPlainText(self.particulas.ver_grafos())
-        print(self.particulas.ver_grafos())
-    
+        self.ui.salida.insertPlainText(self.particulas.crear_grafo())
+        
     @Slot()
     def action_ordenar_id(self):
         self.particulas.ordenar_id()
